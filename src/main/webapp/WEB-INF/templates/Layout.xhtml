@@ -8,14 +8,14 @@
         <f:facet name="first">
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/WilliamHinschink/CorpInc/master/assets/images/ico/favicon.png" />
         </f:facet>
 
-        <title>AlgaWorks</title>
+        <title>Sibentek | <ui:insert name="title" >Dashboard</ui:insert></title>
 
         <h:outputStylesheet library="sibentek" name="styles/custom.css" />
         <h:outputStylesheet library="sibentek" name="styles/layout.css" />
         <h:outputStylesheet library="sibentek" name="styles/components.css" />
-
         <h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
         <h:outputScript target="body" library="sibentek" name="javascripts/app.js" />
     </h:head>
@@ -23,7 +23,7 @@
     <h:body>
 
         <header class="aw-topbar">
-            <h:graphicImage library="sibentek" name="images/logo.png" />
+            <h:graphicImage value="https://raw.githubusercontent.com/WilliamHinschink/CorpInc/master/assets/images/logo.png" />
 
             <a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
         </header>
@@ -36,6 +36,9 @@
             <ui:insert name="content" />
         </section>
 
+        <section class="aw-footer">
+            <ui:insert name="Footer.xhtml" />
+        </section>
     </h:body>
 
 </html>
