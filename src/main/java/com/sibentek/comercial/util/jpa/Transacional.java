@@ -1,4 +1,4 @@
-package com.sibentek.comercial.util;
+package com.sibentek.comercial.util.jpa;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

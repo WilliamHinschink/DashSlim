@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import com.sibentek.comercial.model.Orcamento;
 import com.sibentek.comercial.repository.OrcamentosRepository;
-import com.sibentek.comercial.util.Transacional;
+import com.sibentek.comercial.util.jpa.Transacional;
 import java.util.List;
 
 public class GestaoOrcamentos implements Serializable {

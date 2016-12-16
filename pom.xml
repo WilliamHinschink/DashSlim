@@ -53,6 +53,14 @@
             <version>5.2.5.Final</version>
             <scope>compile</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>5.2.5.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
 		
         <dependency>
             <groupId>mysql</groupId>

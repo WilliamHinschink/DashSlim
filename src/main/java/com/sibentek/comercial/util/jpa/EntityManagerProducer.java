@@ -1,5 +1,6 @@
-package com.sibentek.comercial.util;
+package com.sibentek.comercial.util.jpa;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
@@ -17,7 +18,7 @@ public class EntityManagerProducer {
 	}
 	
 	@Produces
-	@RequestScoped
+	@Dependent
 	public EntityManager createEntityManager() {
 		return this.factory.createEntityManager();
 	}

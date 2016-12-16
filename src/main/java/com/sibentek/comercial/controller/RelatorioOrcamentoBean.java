@@ -18,6 +18,8 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.engine.spi.SessionImplementor;
 
 /**
  *
@@ -45,7 +47,10 @@ public class RelatorioOrcamentoBean implements Serializable {
 
         ExecutorRelatorio executor = new ExecutorRelatorio("/reports/Cherry.jasper",
                 this.httpServletResponse, parametros, "Pedidos.pdf");
-
+        
+        
+//        SessionFactory sessionFactory = entityManager.getEntityManagerFactory().unwrap(SessionFactory.class);
+//        sessionFactory.openSession().doWork(executor);
         Session session = entityManager.unwrap(Session.class);
         session.doWork(executor);
 
