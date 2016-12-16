@@ -74,6 +74,21 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.4.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+		
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>6.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
