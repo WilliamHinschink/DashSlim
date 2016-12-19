@@ -17,9 +17,9 @@ public class EntityManagerProducer {
 		this.factory = Persistence.createEntityManagerFactory("AlgaWorksPU");
 	}
 	
-	@Produces
-	@Dependent
-	public EntityManager createEntityManager() {
+	@Produces //@Dependent
+        @RequestScoped
+        public EntityManager createEntityManager() {
 		return this.factory.createEntityManager();
 	}
 	

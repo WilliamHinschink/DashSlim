@@ -31,8 +31,7 @@ public class ComprasRepository implements Serializable {
         Query query = session.createQuery("SELECT orc.cliente, orc.condicaoPagamento, orc.dataValidade, orc.diasEntrega, orc.telefone FROM Orcamento orc INNER JOIN ORC.itens AS i WHERE ORC.id = :orc_id", Orcamento.class);
         query.setParameter("orc_id", orc_id);
         List<Orcamento> orcamentos = query.getResultList();
-        return orcamentos.stream()
-                .collect(Collectors.toList());
+        return orcamentos;
     }
 
 }

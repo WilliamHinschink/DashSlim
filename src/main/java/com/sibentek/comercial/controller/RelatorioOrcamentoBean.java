@@ -45,14 +45,14 @@ public class RelatorioOrcamentoBean implements Serializable {
         Map<String, Object> parametros = new HashMap<>();
         parametros.put("orc_id", this.orc_id);
 
-        ExecutorRelatorio executor = new ExecutorRelatorio("/reports/Cherry.jasper",
+        ExecutorRelatorio executor = new ExecutorRelatorio("/reports/Cherry.jrxml",
                 this.httpServletResponse, parametros, "Pedidos.pdf");
         
         
-//        SessionFactory sessionFactory = entityManager.getEntityManagerFactory().unwrap(SessionFactory.class);
-//        sessionFactory.openSession().doWork(executor);
-        Session session = entityManager.unwrap(Session.class);
-        session.doWork(executor);
+        SessionFactory sessionFactory = entityManager.getEntityManagerFactory().unwrap(SessionFactory.class);
+        sessionFactory.openSession().doWork(executor);
+//        Session session = entityManager.unwrap(Session.class);
+//        session.doWork(executor);
 
         if (executor.isRelatorioGerado()) {
             facesContext.responseComplete();

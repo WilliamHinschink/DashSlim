@@ -9,8 +9,10 @@ import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 
 import net.sf.jasperreports.engine.JRParameter;
+import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.export.Exporter;
 import net.sf.jasperreports.export.ExporterInput;
@@ -46,8 +48,8 @@ public class ExecutorRelatorio implements Work {
     public void execute(Connection connection) throws SQLException {
         try {
             InputStream relatorioStream = this.getClass().getResourceAsStream(this.caminhoRelatorio);
-
-            JasperPrint print = JasperFillManager.fillReport(relatorioStream, this.parametros, connection);
+            JasperReport relatorio = JasperCompileManager.compileReport(relatorioStream);
+            JasperPrint print = JasperFillManager.fillReport(relatorio, this.parametros, connection);
             this.relatorioGerado = print.getPages().size() > 0;
 
             if (this.relatorioGerado) {
