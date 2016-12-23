@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -29,12 +30,15 @@ public class Usuario implements Serializable {
     @GeneratedValue
     private Long id;
     
+    @NotBlank
     @Column(nullable = false, length = 80)
     private String nome;
     
+    @NotBlank
     @Column(nullable = false, length = 255, unique = true)
     private String email;
     
+    @NotBlank
     @Column(nullable = false, length = 50)
     private String senha;
     

@@ -33,5 +33,9 @@ public class UsuarioRepository implements Serializable {
 
         return usuario;
     }
+    
+    public Usuario salvar(Usuario usuario){
+        return manager.merge(usuario);
+    }
 
 }

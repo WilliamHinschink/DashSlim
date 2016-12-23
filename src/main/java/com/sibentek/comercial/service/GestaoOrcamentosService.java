@@ -9,7 +9,7 @@ import com.sibentek.comercial.repository.OrcamentosRepository;
 import com.sibentek.comercial.util.jpa.Transacional;
 import java.util.List;
 
-public class GestaoOrcamentos implements Serializable {
+public class GestaoOrcamentosService implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	

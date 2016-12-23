@@ -10,7 +10,8 @@ import javax.inject.Named;
 
 import com.sibentek.comercial.model.Orcamento;
 import com.sibentek.comercial.model.OrcamentoItem;
-import com.sibentek.comercial.service.GestaoOrcamentos;
+import com.sibentek.comercial.service.GestaoOrcamentosService;
+import com.sibentek.comercial.util.jsf.FacesUtil;
 import java.util.List;
 import javax.annotation.PostConstruct;
 
@@ -21,7 +22,7 @@ public class CadastroOrcamentoBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Inject
-    private GestaoOrcamentos gestaoOrcamentos;
+    private GestaoOrcamentosService gestaoOrcamentos;
     private Orcamento orcamento = new Orcamento();
     private OrcamentoItem item;
     private List<Orcamento> orcamentos;
@@ -44,8 +45,7 @@ public class CadastroOrcamentoBean implements Serializable {
         gestaoOrcamentos.salvar(orcamento);
         orcamento = new Orcamento();
 
-        FacesMessage msg = new FacesMessage("Orçamento salvo com sucesso!");
-        FacesContext.getCurrentInstance().addMessage(null, msg);
+        FacesUtil.addInfoMessage("Orçamento salvo com sucesso!");
     }
 
     public Orcamento getOrcamento() {

@@ -1,8 +1,13 @@
 $(function () {
+    var linkToHome = '.aw-topbar img';
     $('.js-toggle').bind('click', function (event) {
         $('.js-sidebar, .js-content').toggleClass('is-toggled');
         event.preventDefault();
     });
+    $(linkToHome).bind('click', function (){
+        location.href = 'index.xhtml';
+    });
+    $(linkToHome).css('cursor', 'pointer');
 });
 
 $(document).ready(function () {
