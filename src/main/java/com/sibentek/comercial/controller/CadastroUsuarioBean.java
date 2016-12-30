@@ -2,8 +2,8 @@ package com.sibentek.comercial.controller;
 
 import com.sibentek.comercial.model.Usuario;
 import com.sibentek.comercial.service.UsuarioService;
-import com.sibentek.comercial.util.jsf.FacesUtil;
 import java.io.Serializable;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,14 +20,16 @@ public class CadastroUsuarioBean implements Serializable{
     
     @Inject
     private UsuarioService usuarioService;
-    
-    private Usuario usuario;
+    private Usuario usuario = new Usuario();
     
     public void salvar(){
+        String nomeLogin = usuarioService.refactorLoginName(usuario.getNome());
+        usuario.setNomeLogin(nomeLogin);
         usuarioService.salvar(usuario);
+    }
+    
+    public void abreDialogo(){
         usuario = new Usuario();
-        
-        FacesUtil.addInfoMessage("Usuário salvo com sucesso!");
     }
 
     public Usuario getUsuario() {

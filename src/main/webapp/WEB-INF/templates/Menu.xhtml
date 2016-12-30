@@ -3,7 +3,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <nav class="aw-menu">
-        <ul class="aw-ul">
+        <ul id="aw-accordion" class="aw-ul">
             <li>
                 <h:link outcome="index"><i class="fa  fa-fw  fa-home"></i>Dashboard</h:link>
             </li>
@@ -17,7 +17,11 @@
                 <h:link outcome="Relatorios"><i class="fa  fa-fw  fa-file-text"></i>Relatórios</h:link>
             </li>
             <li>
-                <a href="#"><i class="fa  fa-fw  fa-file-t"></i>Serviços</a>
+                <a href="#"><i class="fa  fa-fw  fa-bookmark"></i>Serviços</a>
+                <ul class="nav child-menu">
+                    <li><h:link outcome="CadastroUsuarios">Cadastro Usuário</h:link></li>
+                    <li><h:link outcome="ConsultaUsuarios">Consulta Usuário</h:link></li>
+                </ul>
             </li>
             <li>
                 <h:link outcome="Config" ><i class="fa  fa-fw  fa-cog"></i>Configurações</h:link>

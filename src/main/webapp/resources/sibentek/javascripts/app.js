@@ -4,7 +4,7 @@ $(function () {
         $('.js-sidebar, .js-content').toggleClass('is-toggled');
         event.preventDefault();
     });
-    $(linkToHome).bind('click', function (){
+    $(linkToHome).bind('click', function () {
         location.href = 'index.xhtml';
     });
     $(linkToHome).css('cursor', 'pointer');
@@ -12,13 +12,22 @@ $(function () {
 
 $(document).ready(function () {
     var url = window.location.href;
-//    $('.aw-ul li a').click(function () {
-//        $(this).addClass('is-selected');
-//        $('.aw-ul li').parent().removeClass('is-selected');
-//    });
     var menuItem = $('.aw-ul li a').filter(function () {
         return this.href === url;
     });
 
     menuItem.addClass('is-selected');
+});
+//$(document).ready(function () {
+//    $('.aw-ul > li > a').click(function () {
+//        if ($(this).attr('class') != 'is-selected') {
+//            $('.aw-ul li ul').slideUp();
+//            $(this).next().slideToggle();
+//            $('.aw-ul li a').removeClass('is-selected');
+//            $(this).addClass('is-selected');
+//        }
+//    });
+//});
+$(document).ready(function() {
+    $('#aw-accordion').dcAccordion();
 });

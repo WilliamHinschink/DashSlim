@@ -21,4 +21,12 @@ public class UsuarioService implements Serializable {
     public void salvar(Usuario usuario) {
         usuarios.salvar(usuario);
     }
+
+    public String refactorLoginName(String name) {
+        String[] nameReturn = name.split(" ");
+        String firstName = nameReturn[0].substring(0);
+        char lastname = nameReturn[1].charAt(0);
+        String nameReturnOrigin = firstName + lastname;
+        return nameReturnOrigin;
+    }
 }

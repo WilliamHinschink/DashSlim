@@ -20,6 +20,9 @@
 	<parameter name="orc_id" class="java.lang.Long">
 		<parameterDescription><![CDATA[]]></parameterDescription>
 	</parameter>
+	<parameter name="photo" class="java.io.ByteArrayInputStream">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
 	<queryString>
 		<![CDATA[select *
 from orcamento orc
@@ -109,7 +112,7 @@ where orc.id = $P{orc_id}]]>
 			</frame>
 			<image>
 				<reportElement x="455" y="0" width="100" height="132" uuid="660ca58f-3841-48c0-b307-a4114805fa99"/>
-				<imageExpression><![CDATA["C:\\Users\\william\\Documents\\NetBeansProjects\\JavaEEProjects\\DashSlim\\src\\main\\resources\\reports\\cherry.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{photo}]]></imageExpression>
 			</image>
 		</band>
 	</title>

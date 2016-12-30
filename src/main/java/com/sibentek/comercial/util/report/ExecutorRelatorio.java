@@ -30,7 +30,7 @@ public class ExecutorRelatorio implements Work {
     private HttpServletResponse response;
     private Map<String, Object> parametros;
     private String nomeArquivoSaida;
-
+    
     private boolean relatorioGerado;
 
     public ExecutorRelatorio(String caminhoRelatorio,

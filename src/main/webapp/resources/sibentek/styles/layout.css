@@ -1,3 +1,6 @@
+input {
+    text-transform: uppercase;
+}
 /* TOPBAR */
 .aw-topbar {
     position: fixed;

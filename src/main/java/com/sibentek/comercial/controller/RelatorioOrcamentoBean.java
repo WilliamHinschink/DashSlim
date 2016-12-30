@@ -7,6 +7,7 @@ package com.sibentek.comercial.controller;
 
 import com.sibentek.comercial.util.jsf.FacesUtil;
 import com.sibentek.comercial.util.report.ExecutorRelatorio;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +18,7 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.engine.spi.SessionImplementor;
 
 /**
  *
@@ -31,6 +30,7 @@ public class RelatorioOrcamentoBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private Long orc_id;
+    private String pathPhoto = "/reports/cherry.jpg";
 
     @Inject
     private FacesContext facesContext;
@@ -43,6 +43,8 @@ public class RelatorioOrcamentoBean implements Serializable {
 
     public void emitir() {
         Map<String, Object> parametros = new HashMap<>();
+        InputStream photoRelatorioStream = this.getClass().getResourceAsStream(this.pathPhoto);
+        parametros.put("photo",photoRelatorioStream);
         parametros.put("orc_id", this.orc_id);
 
         ExecutorRelatorio executor = new ExecutorRelatorio("/reports/Cherry.jrxml",
