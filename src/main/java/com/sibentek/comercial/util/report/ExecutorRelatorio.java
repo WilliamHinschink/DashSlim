@@ -30,6 +30,7 @@ public class ExecutorRelatorio implements Work {
     private HttpServletResponse response;
     private Map<String, Object> parametros;
     private String nomeArquivoSaida;
+    private static final String PATHPHOTO = "/reports/cherry.jpg";
     
     private boolean relatorioGerado;
 
@@ -40,7 +41,7 @@ public class ExecutorRelatorio implements Work {
         this.response = response;
         this.parametros = parametros;
         this.nomeArquivoSaida = nomeArquivoSaida;
-
+        this.parametros.put("photo", inputStream());
         this.parametros.put(JRParameter.REPORT_LOCALE, new Locale("pt", "BR"));
     }
 
@@ -71,5 +72,9 @@ public class ExecutorRelatorio implements Work {
     public boolean isRelatorioGerado() {
         return relatorioGerado;
     }
-
+    
+    private InputStream inputStream(){
+        InputStream photoRelatorioStream = this.getClass().getResourceAsStream(PATHPHOTO);
+        return photoRelatorioStream;
+    }
 }

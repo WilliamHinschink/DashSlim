@@ -26,3 +26,7 @@ body {
 		border: none;
 	}
 }
+
+.ui-datatable-footer {
+    text-align: left !important;
+}

@@ -29,7 +29,8 @@
                                  styleClass="panelgrid-noborder" 
                                  columnClasses="ui-grid-col-10,ui-grid-col-2">
                         <p:selectManyCheckbox id="group" value="#{cadastroUsuarioBean.usuario.grupos}">
-                            <f:selectItems value="#{cadastroGrupoBean.grupos}" var="g" itemLabel="#{g.nome}" itemValue="#{g.id}" />
+                            <f:selectItems value="#{cadastroGrupoBean.grupos}" var="g" itemLabel="#{g.nome}" itemValue="#{g}" />
+                            <f:converter binding="#{grupoConverter}"/>
                         </p:selectManyCheckbox>
                         <p:commandButton type="button" icon="ui-icon-star" title="Adicionar Grupo" onclick="PF('dlg2').show();"/>
                     </p:panelGrid>

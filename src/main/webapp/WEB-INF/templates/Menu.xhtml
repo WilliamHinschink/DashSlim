@@ -5,26 +5,34 @@
     <nav class="aw-menu">
         <ul id="aw-accordion" class="aw-ul">
             <li>
-                <h:link outcome="index"><i class="fa  fa-fw  fa-home"></i>Dashboard</h:link>
+                <h:link outcome="/index"><i class="fa  fa-fw  fa-home"></i>Dashboard</h:link>
             </li>
             <li>
-                <h:link outcome="Clientes"><i class="fa  fa-fw  fa-user"></i>Clientes</h:link>
+                <a href="#"><i class="fa  fa-fw  fa-user"></i>Clientes</a>
+                <ul class="nav child-menu">
+                    <li><h:link outcome="/client/CadastraClientes">Cadastrar Cliente</h:link></li>
+                    <li><h:link outcome="/client/ConsultaClientes">Consultar Clientes</h:link></li>
+                </ul>
             </li>
             <li>
-                <h:link outcome="Orcamentos"><i class="fa  fa-fw  fa-pencil-square-o"></i>Orçamentos</h:link>
+                <a href="#"><i class="fa  fa-fw  fa-pencil-square-o"></i>Orçamentos</a>
+                <ul class="nav child-menu">
+                    <li><h:link outcome="/Orcamentos">Cadastrar Orçamento</h:link></li>
+                    <li><h:link outcome="/OrcamentoClientes">Consultar Orçamentos</h:link></li>
+                </ul>
             </li>
             <li>
-                <h:link outcome="Relatorios"><i class="fa  fa-fw  fa-file-text"></i>Relatórios</h:link>
+                <h:link outcome="/Relatorios"><i class="fa  fa-fw  fa-file-text"></i>Relatórios</h:link>
             </li>
             <li>
                 <a href="#"><i class="fa  fa-fw  fa-bookmark"></i>Serviços</a>
                 <ul class="nav child-menu">
-                    <li><h:link outcome="CadastroUsuarios">Cadastro Usuário</h:link></li>
-                    <li><h:link outcome="ConsultaUsuarios">Consulta Usuário</h:link></li>
+                    <li><h:link outcome="/CadastroUsuarios">Cadastro Usuário</h:link></li>
+                    <li><h:link outcome="/ConsultaUsuarios">Consulta Usuário</h:link></li>
                 </ul>
             </li>
             <li>
-                <h:link outcome="Config" ><i class="fa  fa-fw  fa-cog"></i>Configurações</h:link>
+                <h:link outcome="/Config" ><i class="fa  fa-fw  fa-cog"></i>Configurações</h:link>
             </li>
         </ul>
     </nav>

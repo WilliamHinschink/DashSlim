@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/templates/Layout.xhtml">
+    <ui:define name="title">Clientes</ui:define>
+    <ui:define name="content">
+        <h1 class="aw-page-title">Clientes</h1>
+        <h:form>
+            <p:messages autoUpdate="true" closable="true" />
+            <p:dataTable emptyMessage="Nenhum cliente encontrado." 
+                         value="#{cadastroOrcamentoBean.orcamentos}" var="orc">
+                <p:column headerText="ID">
+                    <h:outputText value="#{orc.id}" />
+                </p:column>
+                <p:column headerText="NOME">
+                    <h:outputText value="#{orc.cliente}" />
+                </p:column>
+                <p:column style="width:32px;text-align: center">
+                    <p:commandButton icon="ui-icon-mail-closed" title="Enviar email" action="#{envioEmailBean.enviarEmailAlt(orc)}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>

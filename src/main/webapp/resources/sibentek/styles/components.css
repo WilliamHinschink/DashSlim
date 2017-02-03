@@ -90,3 +90,11 @@ ul.nav.child-menu li:after{
     font-size: 1.5em;
     color: #373737;
 }
+/* SECTION-TITLE */
+.aw-page-section {
+    margin: 0;
+    padding: 20px 0 0;
+
+    font-size: 1.1em;
+    color: #373737;
+}

@@ -1,8 +1,12 @@
 package com.sibentek.comercial.controller;
 
+import com.sibentek.comercial.model.Grupo;
 import com.sibentek.comercial.model.Usuario;
+import com.sibentek.comercial.service.GrupoService;
 import com.sibentek.comercial.service.UsuarioService;
 import java.io.Serializable;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -15,13 +19,13 @@ import javax.inject.Named;
 @Named
 @ViewScoped
 public class CadastroUsuarioBean implements Serializable{
-    
+
     private static final long serialVersionUID = 1L;
-    
+
     @Inject
     private UsuarioService usuarioService;
     private Usuario usuario = new Usuario();
-    
+
     public void salvar(){
         String nomeLogin = usuarioService.refactorLoginName(usuario.getNome());
         usuario.setNomeLogin(nomeLogin);

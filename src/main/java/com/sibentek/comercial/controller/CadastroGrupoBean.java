@@ -36,6 +36,7 @@ public class CadastroGrupoBean implements Serializable {
     
     public void salvar(){
         grupoService.salvar(grupo);
+        init();
     }
 
     public Grupo getGrupo() {
